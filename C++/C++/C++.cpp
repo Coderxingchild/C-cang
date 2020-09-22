@@ -241,7 +241,171 @@ using namespace std;
 //	const int a = 10;
 //	int*pa = (int*)&a;
 //	*pa = 100;
-//	cout << a << endl;
-//	cout << *pa << endl;
+//
+//	cout << a << endl;     //10 编译阶段被替换
+//	cout << *pa << endl;     //100 从a 空间中读取
 //	return 0;
 //}
+
+
+
+//#define MAX 10  //在预处理阶段会被宏体替换
+//int main()
+//{
+//	int a = 100;
+//	a = MAX;    //预处理时提换  a=10
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	const int a = 10;
+//	int* pa = (int*)&a;
+//
+//	printf("%d\n", a);
+//	printf("%d\n", *pa);
+//	return 0;
+//}
+
+
+//宏替换----预处理
+//const 修饰的常量替换-----编译 （参与类型检测）
+
+//#define PI 3.14
+//
+//int main()
+//{
+//	int r = 2;
+//	double s = PI * r * r;
+//	return 0;
+//}
+
+
+
+//#define MAX(a,b) (a > b ? a : b)
+//
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	cout << MAX(a, ++b) << endl;   //  a > ++b ? a : ++b ----------> b = 22
+//	return 0;
+//}
+
+
+
+
+//内联函数
+//Release 版本编译器对代码的优化非常高
+
+//inline int Add(int left, int right)
+//{
+//	return left + right;
+//}
+//inline void TestInline()
+//{
+//	for (int i = 0; i < 10; i++) {
+//		printf("%d\n", i);
+//	}
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//
+//	int c = 0;
+//	c = Add(a, b);
+//	printf("%d\n", c);
+//	cout << c << endl;
+//
+//	TestInline();
+//	return 0;
+//}
+
+
+
+
+//inline int Max(int left, int right)
+//{
+//	return left + right;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int c = 0;
+//	c = Max(++b, a);
+//	cout << c << endl;
+//	return 0;
+//}
+
+
+
+
+//int Add(int left, int right)
+//{
+//	return left + right;
+//}
+//int main()
+//{
+//	int a = 10;
+//	auto b = a;
+//	auto c = 'c';
+//	auto d = 12.34;
+//	auto r = Add(10, 20);
+//
+//	cout << typeid(a).name() << endl;
+//	cout << typeid(b).name() << endl;
+//	cout << typeid(c).name() << endl;
+//	cout << typeid(d).name() << endl;
+//	cout << typeid(r).name() << endl;
+//	return 0;
+//}
+
+
+
+
+
+//int main()
+//{
+//	int a = 10;
+//	auto* pa1 = &a;
+//	auto pa2 = &a;
+//
+//	cout << typeid(pa1).name << endl;
+//	cout << typeid(pa2).name << endl;
+//
+//	int b = 10;
+//	auto rb1 = b;
+//	auto& rb2 = b;    // rb2 是 b 的别名；auto 定义引用类型变量时，必须要加 &   
+//	cout << typeid(rb1).name << endl;
+//	cout << typeid(rb2).name << endl;
+//
+//	return 0;
+//}
+
+
+
+
+int main()
+{
+	int a1[] = { 1,2,3,4,5,6,7,8,9,0 };
+	for (int i = 0; i < sizeof(a1) / sizeof(a1[0]); ++i) {
+		a1[i] *= 2;
+	}
+	for (int i = 0; i < sizeof(a1) / sizeof(a1[0]); ++i)
+		cout << a1[i] << " ";
+
+	int array[] = { 1,2,3,4,5,6,7,8,9,0 };
+	for (auto& e : array)
+		e *= 2;
+	for (auto& e : array)
+		cout << e << " ";
+	cout << endl;
+
+	return 0;
+}
+
+
+
