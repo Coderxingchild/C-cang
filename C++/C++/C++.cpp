@@ -388,24 +388,32 @@ using namespace std;
 
 
 
-int main()
-{
-	int a1[] = { 1,2,3,4,5,6,7,8,9,0 };
-	for (int i = 0; i < sizeof(a1) / sizeof(a1[0]); ++i) {
-		a1[i] *= 2;
-	}
-	for (int i = 0; i < sizeof(a1) / sizeof(a1[0]); ++i)
-		cout << a1[i] << " ";
+//int main()
+//{
+//	int a1[] = { 1,2,3,4,5,6,7,8,9,0 };
+//	for (int i = 0; i < sizeof(a1) / sizeof(a1[0]); ++i) {
+//		a1[i] *= 2;
+//	}
+//	for (int i = 0; i < sizeof(a1) / sizeof(a1[0]); ++i)
+//		cout << a1[i] << " ";
+//
+//	int array[] = { 1,2,3,4,5,6,7,8,9,0 };
+//	for (auto& e : array)          
+//		e *= 2;
+//	for (auto e : array)          // for 循环范围
+//		cout << e << " ";
+//	cout << endl;
+//
+//	return 0;
+//}
 
-	int array[] = { 1,2,3,4,5,6,7,8,9,0 };
-	for (auto& e : array)
-		e *= 2;
-	for (auto& e : array)
-		cout << e << " ";
-	cout << endl;
-
-	return 0;
-}
 
 
+// 空指针  NULL
+//nullptr --------- 用来表示空值指针
 
+//int main()
+//{
+//	cout << sizeof(nullptr) << endl;       // 4 
+//	return 0;
+//}
