@@ -417,3 +417,9 @@ using namespace std;
 //	cout << sizeof(nullptr) << endl;       // 4 
 //	return 0;
 //}
+
+
+#include<iostream>
+#include<stdlib.h>
+
+using namespace std;
