@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stdlib.h>
 using namespace std;
 
 
@@ -419,7 +420,258 @@ using namespace std;
 //}
 
 
-#include<iostream>
-#include<stdlib.h>
 
-using namespace std;
+
+//class A {
+//public:
+//	void Test()
+//	{
+//		cout << "A::Test()" << endl;
+//	}
+//	void TestFunc()
+//	{
+//		Test();
+//		cout << this << endl;
+//	}
+//	int _t;
+//};
+//int main()
+//{
+//	A a1, a2, a3;
+//	a1.TestFunc();
+//	a2.TestFunc();
+//	a3.TestFunc();
+//
+//	A* pa =&a1;
+//	pa->TestFunc();
+//
+//	pa = &a2;
+//	pa->TestFunc();
+//
+//	pa = nullptr;
+//	pa->TestFunc();
+//
+//	return 0;
+//}
+
+
+
+//class Date {
+//public:
+//	Date()
+//	{
+//		_year = 2020;
+//		_month = 10;
+//		_day = 11;
+//	}
+//	Date(int year, int month, int day) {
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void SetDate(int year, int month, int day) {
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void PrintDate()
+//	{
+//		cout << _year << "-" << _month << "-" << _day << endl;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	/*Date d;
+//	d.SetDate(2020, 10, 11);
+//	d.PrintDate();*/
+//
+//	Date d(2020, 10, 11); //构造函数
+//	d.PrintDate();
+//
+//	Date d1;
+//	d1.PrintDate();           //自动调用无参类型的构造函数
+//	
+//    Date d2();
+//	return 0;
+//}
+
+
+
+
+//class Time {
+//public:
+//	Time(int hour = 0, int minute = 0, int second = 0) {
+//		_hour = hour;
+//		_minute = minute;
+//		_second = second;
+//	}
+//	void PrintTime()
+//	{
+//		cout << _hour << ":" << _minute << ":" << _second << endl;
+//	}
+//private:
+//	int _hour;
+//	int _minute;
+//	int _second;
+//};
+//class Date {
+//public:
+//	/*Date()
+//	{
+//		_year = 2020;
+//		_month = 10;
+//		_day = 11;
+//	}
+//	Date(int year, int month, int day) {
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}*/
+//	void SetDate(int year, int month, int day) {
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void PrintDate()
+//	{
+//		cout << _year << "-" << _month << "-" << _day << endl;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//
+//	Time _t;
+//};
+//int main()
+//{
+//	Date d;
+//	return 0;
+//}
+
+
+//class Date {
+//public:
+//	Date()  //无参构造函数
+//	{
+//		_year = 2020;
+//		_month = 10;
+//		_day = 11;
+//	}
+//	Date(int year=2020, int month=10, int day=11) {
+//		//全缺省构造参数
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void SetDate(int year, int month, int day) {
+//		_year = year;
+//		_month = month;
+//		_day = day;
+//	}
+//	void PrintDate()
+//	{
+//		cout << _year << "-" << _month << "-" << _day << endl;
+//	}
+//private:
+//	int _year;
+//	int _month;
+//	int _day;
+//};
+//int main()
+//{
+//	Date d1(1999, 4, 5);
+//
+//	//既可以调用无参构造函数创建d2，也可以调用全缺省参数创建d2-----------》产生错误
+//	//结论：全缺省参数  与   无参构造函数  只能存在一个（或将全缺省参数构造函数的初始化全部去掉）
+//
+//	//Date d2;  //error
+//
+//	return 0;
+//}
+
+
+
+//typedef int DataType;
+//
+//class SeqList {
+//public:
+//	SeqList(int capacity = 10) {  //构造函数
+//		_array = (DataType*)malloc(sizeof(DataType)*capacity);
+//		_capacity = capacity;
+//		_size = 0;
+//	}
+//	~SeqList()    //析构函数，无返回类型,无参数--不能重载
+//	{
+//		if (_array) {
+//			free(_array);
+//			_array = nullptr;
+//			_capacity = 0;
+//			_size = 0;
+//		}
+//	}
+//	void PushBack(DataType data)
+//	{
+//		///////////////
+//	}
+//	void PupBack()
+//	{
+//		/*if (!= Empty(SeqList)) {
+//			_size--;
+//		}*/
+//	}
+//	size_t Capacity()
+//	{
+//		return _capacity;
+//	}
+//	size_t size()
+//	{
+//		return _size;
+//	}
+//private:
+//	DataType* _array;
+//	size_t _capacity;
+//	size_t _size;
+//};
+//int main()
+//{
+//	return 0;
+//}
+
+
+
+
+//class String {
+//public:
+//	String(const char*str) {
+//		_str = (char*)malloc(strlen(str) + 1);
+//		strcpy(_str, str);
+//	}
+//	~String()
+//	{
+//		if (_str) {
+//			free(_str);
+//			_str = nullptr;
+//		}
+//	}
+//private:
+//	char* _str;
+//};
+//class Person {
+//private:
+//	String _name;
+//		int _age;
+//};
+//void TestPerson()
+//{
+//	Person p;
+//}
+//int main()
+//{
+//	String s("hello world!");
+//	return 0;
+//}
