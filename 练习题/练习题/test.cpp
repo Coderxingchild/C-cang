@@ -7,20 +7,20 @@ using namespace std;
 
 //malloc \ calloc \ realloc
 
-class Date {
-	int _year = 1900;
-	int _mont = 1;
-	int _day = 1;
-};
-void test()
-{
-	Date *pd = (Date*)malloc(sizeof(Date));
-}
-int main()
-{
-	test();  //随机值：malloc 只开辟空间不进行初始化
-	return 0;
-}
+//class Date {
+//	int _year = 1900;
+//	int _mont = 1;
+//	int _day = 1;
+//};
+//void test()
+//{
+//	Date *pd = (Date*)malloc(sizeof(Date));
+//}
+//int main()
+//{
+//	test();  //随机值：malloc 只开辟空间不进行初始化
+//	return 0;
+//}
 
 
 

@@ -163,7 +163,6 @@ using namespace std;
 //	d1.PrintDate();
 //	d1 -= 20;
 //	d1.PrintDate();
-//	
 //	Date d2(2019, 10, 2);
 //	Date d3(2020, 10, 1);
 //	Date d4(2020, 10, 12);
@@ -240,16 +239,16 @@ using namespace std;
 
 //test 3 -----析构函数
 //析构函数：一个类有且仅有一个析构函数，若未定义系统自动默认；系统自动调用析构函数
-//typedef int DataType;
-//class SeqList {
+//typedef int datatype;
+//class seqlist {
 //public:
-//	SeqList(int capacity = 10) {
-//		_p = (DataType*)malloc(capacity * sizeof(DataType));
+//	seqlist(int capacity = 10) {
+//		_p = (datatype*)malloc(capacity * sizeof(datatype));
 //		assert(_p);
 //		_size = 0;
 //		_capacity = capacity;
 //	}
-//	~SeqList() {
+//	~seqlist() {
 //		if (_p) {
 //			free(_p);
 //			_p = nullptr;
@@ -264,7 +263,7 @@ using namespace std;
 //};
 //void test()
 //{
-//	SeqList m1;
+//	seqlist m1;
 //}
 //int main()
 //{
@@ -294,7 +293,6 @@ using namespace std;
 //	int _minute;
 //	int _second;
 //};
-//
 //class Date {
 //public:
 //	Date()
@@ -307,7 +305,6 @@ using namespace std;
 //	int _year;
 //	int _month;
 //	int _day;
-//
 //	Time t;
 //};
 //void test()
@@ -324,14 +321,14 @@ using namespace std;
 
 // test 1
 
-//class Date {
+//class date {
 //public:
-//	Date() {     //无参构造
+//	date() {     //无参构造
 //		_year = 2020;
 //		_month = 10;
 //		_day = 11;
 //	}
-//	Date(int year = 2020, int month = 10, int day = 20) {  //全缺省构造
+//	date(int year = 2020, int month = 10, int day = 20) {  //全缺省构造
 //		_year = year;
 //		_month = month;
 //		_day = day;
@@ -343,7 +340,7 @@ using namespace std;
 //};
 //void test()
 //{
-//	Date d1(2020,10,24);   // 调用有参构造函数
+//	date d1(2020,10,24);   // 调用有参构造函数
 //}
 //int main()
 //{
