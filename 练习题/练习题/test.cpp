@@ -3,6 +3,113 @@
 #include<stdio.h>
 using namespace std;
 
+// 模板
+
+
+//类模板
+//template <class T>
+//class A {
+//public:
+//	A(int a = 10) :_a(a)
+//	{}
+//	~A();    //析构函数在类中声明，类外定义
+//private:
+//	int _a;
+//};
+//template <class T>
+//A<T>::~A()
+//{
+//	if (_a)
+//		_a = 0;
+//}
+
+
+
+//函数模板
+//template<typename T1>
+//T1 Add(const int& a, const int& b)
+//{
+//	return a + b;
+//}
+//int Add(const int& a, const int& b)
+//{
+//	return a + b;
+//}
+//void test()
+//{
+//	int a = 1;
+//	int b = 2;
+//	Add(a, b);            //优先选取已经存在的函数
+//}
+//int main()
+//{
+//	test();
+//	return 0;
+//}
+
+
+
+//template<class T>
+//T Add(const T& a,const T& b)
+//{
+//	return a + b;
+//}
+//int Add(int& a, int& b)
+//{
+//	return a + b;
+//}
+//int main()
+//{
+//	int m = 1, n = 3;
+//	Add(m,n);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 1;
+//	double b = 1.0;
+//	Add<int>(a, b);
+//	return 0;
+//}
+
+
+
+//函数模板
+
+//template <typename T1>
+//void Swap(T1& a, T1& b)
+//{
+//	T1 tmp = b;
+//	b = a;
+//	a = tmp;
+//}
+//int main()
+//{
+//	int a = 1, b = 2;
+//	double c = 1.0, d = 2.0;
+//	char e = 'e', f = 'f';
+//
+//	//隐式实例化
+//	Swap(a, b);
+//	Swap(c, d);
+//	Swap(e, f);           //通过反汇编查看
+//
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
 //内存管理
 
 //malloc \ calloc \ realloc
