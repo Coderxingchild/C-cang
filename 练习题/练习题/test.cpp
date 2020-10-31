@@ -1,10 +1,157 @@
 #include<iostream>
+#include<string>
 #include<stdlib.h>
 #include<stdio.h>
 using namespace std;
 
-// 模板
+//string  
 
+//范围 for 
+void test()
+{
+	string s = "1234";
+	for (char ch : s) {
+		//for(auto& ch:s)  ----------- 可读可写
+		cout << ch << " ";
+		ch = 'a';   //不会修改内容
+	}
+	cout << endl;
+
+	/////////////////////////////////////////////
+
+	string s = "1234";
+	for (char& ch : s) {
+		//for(const char& ch:s)
+		//for(const auto& ch:s)  ----------- 只读
+		cout << ch << " ";
+		ch = 'a';   //会修改内容 ------- 引用类型
+	}
+	cout << endl;
+
+}
+
+
+
+
+//迭代器的使用
+
+//void printString(const string& str)
+//{
+//	string::const_reverse_iterator crit = str.crbegin();
+//	while (crit != str.crend) {
+//		cout << *crit << " ";      //只读
+//		++crit;
+//	}
+//	cout << endl;
+//}
+
+
+//void test()
+//{
+//	string s = "12345";
+//	string::reverse_iterator rit = s.rbegin();    // rbegin 指向最后一个元素
+//	while (rit != s.rend) {
+//		cout << *rit << " ";
+//		++rit;
+//	}
+//	cout << endl;
+//
+//	//string s = "1234";
+//	//const string s1 = "4567";
+//	//string::const_iterator cit = s.cbegin();
+//	//string::const_iterator cit1 = s1.cbegin();  //只读 
+//}
+
+
+
+//void test()
+//{
+//	string s = "1234";
+//	for (int i = 0; i < s.size(); ++i) {    //打印每一个元素
+//		cout << s[i] << " ";
+//	}
+//	cout << endl;
+//
+//
+//	//只读操作
+//	cout << "const_iterator:" << endl;
+//	string::const_iterator cit = s.cbegin();
+//	while (cit != s.cend) {
+//		cout << *cit << " ";
+//	}
+//	cout << endl;
+//
+//
+//	//可读可写操作
+//	cout << "iterator: " << endl;  //迭代器的使用
+//	string::iterator it = s.begin();
+//	while (it != s.end)
+//	{
+//		cout << *it << " ";   // 打印元素---迭代器解引用
+//		//利用迭代器来修改内容  ：
+//		//*it = 'a';   //输出全为 a
+//		++it;   //迭代器自增
+//	}
+//	cout << endl;
+//}
+
+
+//void test()
+//{
+//	string s2 = "1234";
+//	s2[0] = 'a';
+//	s2[1] = 'b';
+//	s2.operator[](2) = 'c';
+//
+//	string s = "1234";
+//	s.at(0) = 'a';
+//	s.at(1) = 'b';
+//
+//	const string s1 = "abcd";
+//	cout << s1.at(1) << endl;
+//	// s1.at(2) = '2';   //不可以修改
+//
+//	// s.at(5) = 'c';  //越界----出错
+//
+//	//////////////////////////////////////////////////////////////
+//
+//	//string str = "1234";
+//	//cout << str << endl;
+//
+//	//str.front() = 'a';        //修改第一个字符
+//	//cout << str << endl;
+//
+//	//str.back() = 'b';          //修改最后一个字符
+//	//cout << str << endl;
+//}
+
+
+
+
+
+//void test()
+//{
+//	string str = "1234";
+//	cout << str.size() << endl;
+//	cout << str.capacity() << endl;
+//
+//	str.resize(100);   //修改大小-----size
+//	str.reserve(100);   //修改容量----capacity
+//	cout << str.size() << endl;
+//	cout << str.capacity() << endl;
+//
+//	str.shrink_to_fit();
+//	cout << str.size() << endl;
+//	cout << str.capacity() << endl;
+//}
+
+
+
+
+
+
+
+// 模板
 
 //类模板
 //template <class T>
