@@ -6,6 +6,10 @@ using namespace std;
 
 //string  
 
+//int main()
+//{
+//	return 0;
+//}
 //实现两个字符串的相加
 //int Add(string num1, string num2)
 //{
