@@ -7,28 +7,28 @@ using namespace std;
 //string  
 
 //范围 for 
-void test()
-{
-	string s = "1234";
-	for (char ch : s) {
-		//for(auto& ch:s)  ----------- 可读可写
-		cout << ch << " ";
-		ch = 'a';   //不会修改内容
-	}
-	cout << endl;
-
-	/////////////////////////////////////////////
-
-	string s = "1234";
-	for (char& ch : s) {
-		//for(const char& ch:s)
-		//for(const auto& ch:s)  ----------- 只读
-		cout << ch << " ";
-		ch = 'a';   //会修改内容 ------- 引用类型
-	}
-	cout << endl;
-
-}
+//void test()
+//{
+//	string s = "1234";
+//	for (char ch : s) {
+//		//for(auto& ch:s)  ----------- 可读可写
+//		cout << ch << " ";
+//		ch = 'a';   //不会修改内容
+//	}
+//	cout << endl;
+//
+//	/////////////////////////////////////////////
+//
+//	string s = "1234";
+//	for (char& ch : s) {
+//		//for(const char& ch:s)
+//		//for(const auto& ch:s)  ----------- 只读
+//		cout << ch << " ";
+//		ch = 'a';   //会修改内容 ------- 引用类型
+//	}
+//	cout << endl;
+//
+//}
 
 
 
