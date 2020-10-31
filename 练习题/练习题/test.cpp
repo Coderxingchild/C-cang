@@ -6,8 +6,140 @@ using namespace std;
 
 //string  
 
-// operator+=
+//实现两个字符串的相加
+//int Add(string num1, string num2)
+//{
+//	int len1 = num1.size() - 1;
+//	int len2 = num2.size() - 1;   //指向个位数字
+//	int step = 0;//进位
+//	int curSum = 0;
+//	string ret;
+//
+//	while (len1 >= 0 || len2 >= 0) {
+//		curSum = step;     //累加上一步计算的进位
+//		if (len1 >= 0)
+//			curSum += num1[len1] - '0';
+//		if (len2 >= 0)
+//			curSum += num2[len2] = '0';
+//
+//		if (curSum > 9) {
+//			step = 1;
+//			curSum -= 10;  //存在进位
+//		}
+//		else step = 0;
+//	}
+//	ret.insert(0, 1, curSum);  //头插，保存当前位计算结果
+//	 //ret += curSum + '0';   //尾插
+//	len1--;
+//	len2--;
+//	if (step == 1) {   //如果最高位有进位-----头插
+//		ret.insert(0, 1, '1');
+//		//ret+='1';    //尾插
+//	}
+//	cout << ret << endl;
+//	//reverse(ret.begin(),ret.end());      //若果用尾插法需要逆置
+//}
 
+
+//求字符串中有效字符个数：不包含空格
+//int main()
+//{
+//	string s;
+//	getline(cin, s);
+//	size_t pos = s.rfind(' ');    // 反向查找空格
+//	if (pos != string::npos) {
+//		cout << s.size() << endl;
+//	}else
+//	cout << s.rfind - pos - 1 << endl;
+//	return 0;
+//}
+
+
+
+
+//找只出现一次的字符
+//int first(string s)
+//{
+//	int counts[26] = { 0 };
+//	for (const auto& ch : s) {   //统计个数
+//		counts[ch - 'a']++;
+//	}
+//	for (int i = 0; i < s.size(); ++i) {
+//		if (counts[s[i] - 'a'] == 1) {   //寻找只出现一次的字符
+//			cout << s[i] << endl;
+//		}
+//		return -1;
+//	}
+//}
+
+
+
+//输入字符，将字符转为整型
+
+//int zhuanzheng(const string str)
+//{
+//	if (str.empty()) {
+//		return 0;           //空字符返回0 
+//	}
+//	int i = 0, flag = 1, num = 0;
+//	if (str[i] == '-') {
+//		flag = -1;
+//		++i;
+//	}
+//	if (str[i] == '+') {
+//		++i;
+//	}
+//	for (; i < str.size(); ++i) {
+//		num = num * 10 + flag * (str[i] - '0');
+//	}
+//	return num;
+//}
+
+
+
+
+//operator>>
+
+//void test()
+//{
+//	//cin 不能输入带有空格的字符串
+//	string s;
+//	cin >> s;
+//	operator>>(cin, s);     //输入,清空式输入
+//
+//	getline(cin, s);        //默认按行输入
+//	getline(cin, s, ',');    // 逗号作为分隔符
+//}
+
+
+//operator +=
+//void test()
+//{
+//	string str1 = "123";
+//	string str2 = "abc";
+//	str1 += str2;   //123abc
+//	string& rs = str1 += str2;   //123abcabc
+//}
+
+
+
+//void test()
+//{
+//	//比较规则：从前往后按照每一个字符的 ASCII 值进行比较
+//	int ret = strcmp("1", "12");
+//	ret = strcmp("345", "92");
+//
+//	string s1 = "1";
+//	string s2 = "12";
+//	string s3 = "345";
+//	string s4 = "92";
+//
+//	ret = s1 > s2;
+//	ret = s1 > s3;
+//}
+
+
+// operator+=
 //void test()
 //{
 //	string s = "1234";
@@ -17,15 +149,26 @@ using namespace std;
 //	string s1 = "678";
 //	s += s1;
 //}
-void test()
-{
 
-}
-int main()
-{
-	test();
-	return 0;
-}
+
+//void test()
+//{
+//	string s = "http://www.cplusplus.com/reference/string/string/?kw=string";
+//	size_t pos = s.find("://");
+//	if (pos != string::npos) {
+//		size_t pos2 = s.find("/", pos + 3);
+//		if (pos2 != string::npos) {
+//			pos += 3;
+//			string s2 = s.substr(pos, pos2 - 1);
+//			cout << s2 << endl;
+//		}
+//	}
+//}
+//int main()
+//{
+//	test();
+//	return 0;
+//}
 
 
 //范围 for 
