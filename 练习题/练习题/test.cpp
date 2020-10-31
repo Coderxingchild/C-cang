@@ -6,6 +6,28 @@ using namespace std;
 
 //string  
 
+// operator+=
+
+//void test()
+//{
+//	string s = "1234";
+//	s += 'a';
+//	s += "bcd";        
+//	cout << s << endl;
+//	string s1 = "678";
+//	s += s1;
+//}
+void test()
+{
+
+}
+int main()
+{
+	test();
+	return 0;
+}
+
+
 //·¶Î§ for 
 //void test()
 //{

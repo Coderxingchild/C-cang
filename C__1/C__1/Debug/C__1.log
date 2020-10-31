@@ -1,0 +1,11 @@
+﻿  test.cpp
+d:\users\github 代码\c-cang\c__1\c__1\test.cpp(128): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  d:\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 参见“strcpy”的声明
+d:\users\github 代码\c-cang\c__1\c__1\test.cpp(129): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  d:\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 参见“strcpy”的声明
+d:\users\github 代码\c-cang\c__1\c__1\test.cpp(140): error C2664: “void InitStudent(Student *,char *,char *,int)”: 无法将参数 2 从“const char [6]”转换为“char *”
+  d:\users\github 代码\c-cang\c__1\c__1\test.cpp(140): note: 从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+d:\users\github 代码\c-cang\c__1\c__1\test.cpp(141): error C2664: “void InitStudent(Student *,char *,char *,int)”: 无法将参数 2 从“const char [6]”转换为“char *”
+  d:\users\github 代码\c-cang\c__1\c__1\test.cpp(141): note: 从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
+d:\users\github 代码\c-cang\c__1\c__1\test.cpp(142): error C2664: “void InitStudent(Student *,char *,char *,int)”: 无法将参数 2 从“const char [5]”转换为“char *”
+  d:\users\github 代码\c-cang\c__1\c__1\test.cpp(142): note: 从字符串文本转换将丢失 const 限定符(请参阅 /Zc:strictStrings)
