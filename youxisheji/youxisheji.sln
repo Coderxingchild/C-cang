@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1145
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "youxisheji", "youxisheji\youxisheji.vcxproj", "{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}.Debug|x64.ActiveCfg = Debug|x64
+		{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}.Debug|x64.Build.0 = Debug|x64
+		{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}.Debug|x86.ActiveCfg = Debug|Win32
+		{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}.Debug|x86.Build.0 = Debug|Win32
+		{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}.Release|x64.ActiveCfg = Release|x64
+		{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}.Release|x64.Build.0 = Release|x64
+		{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}.Release|x86.ActiveCfg = Release|Win32
+		{BBD6F5AF-CB6E-469D-A8D2-53171F1CAC8B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDC078E2-9B7E-4ADF-AAFA-9340651F6756}
+	EndGlobalSection
+EndGlobal
