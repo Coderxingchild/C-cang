@@ -1,0 +1,4 @@
+﻿  test.cpp
+d:\users\github 代码\c-cang\11.6\11.6\test.cpp(18): warning C4018: “<”: 有符号/无符号不匹配
+d:\users\github 代码\c-cang\11.6\11.6\test.cpp(22): warning C4715: “first”: 不是所有的控件路径都返回值
+  11.6.vcxproj -> D:\Users\github 代码\C-cang\11.6\Debug\11.6.exe
