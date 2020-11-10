@@ -72,3 +72,45 @@ using namespace std;
 //	}
 //	return aa;
 //}
+
+
+
+
+//给定一个年份和数字，输出年月日
+
+//#include<iostream>
+//using namespace std;
+//
+//int Getday(int year, int month)
+//{
+//	int days[13] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
+//	int day = days[month];
+//	if (2 == month) {
+//		if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {        //判断闰年
+//			++day;
+//		}
+//	}
+//	return day;
+//}
+//int main()
+//{
+//	int year=2292, n=72;
+//	int i = 1;    //从一月份开始
+//	if (year >= 0 && n >= 0) {  //输入有效数据
+//		for (i = 1; n > Getday(year, i); ++i) {
+//			n -= Getday(year, i);
+//		}
+//		if (i >= 13) {
+//			year += 1;
+//			i -= 12;
+//		}
+//		cout << year << "-" << i << "-" << n << endl;
+//	}
+//	return 0;
+//}
+
+
+
+//计算日期差值
+
+

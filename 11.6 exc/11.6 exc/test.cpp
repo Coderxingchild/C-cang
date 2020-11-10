@@ -5,7 +5,7 @@ using namespace std;
 #pragma warning(disable:4996)
 
 
-////模拟实现 String
+////模拟实现 String 类
 //class String {
 //public:
 //	//构造函数
