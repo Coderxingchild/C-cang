@@ -4,90 +4,151 @@
 using namespace std;
 
 
+//模拟string
+
+class String {
+public:
+	//构造函数
+	String(const char* ptr = "") {
+		_size = strlen(ptr);
+		_capacity = _size;
+		_ptr = new char[_size + 1];
+		strcpy(_ptr, ptr);
+	}
+	//拷贝构造函数
+	/*String(const String& str) :_ptr(new char[_capacity + 1]), _size(str._ptr), _capacity(str._capacity)
+	{
+		strcpy(_ptr, str._ptr);
+	}*/
+
+	String(const String& str) :_ptr(nullptr), _size(0), _capacity(0)
+	{
+		String tmp(str._ptr);
+		Swap(tmp);
+	}
+	void Swap(String& str) {
+		swap(this->_ptr, str._ptr);
+		swap(this->_size, str._size);
+		swap(this->_capacity, str._size);
+	}
+	//析构函数
+	~String()
+	{
+		if (_ptr) {
+			delete[] _ptr;
+			_ptr = nullptr;
+			_size = _capacity = 0;
+		}
+	}
+	//赋值
+	/*String& operator=(String str)
+	{
+		Swap(str);
+		return *this;
+	}*/
+	String& operator=(String str)
+	{
+		if (this != &str) {
+			char* ymp = new char[str._capacity + 1];
+
+		}
+	}
+private:
+	char* _ptr;
+	size_t _size;
+	size_t _capacity;
+};
+
+
+
+
+
+
+
 //cin:不能读取带有空格之后的字符串
 //getline:默认输入一行内容，中间可以有空格
 
 
-class string {
-public:
-	typedef char* iterator;
-
-	string(const char*ptr = "") {
-		_size = strlen(ptr);
-		_capacity = _size;
-		_ptr = new char[_capacity + 1];
-		strcpy(_ptr, ptr);
-	}
-	/*string(const string& s) :_ptr(nullptr), _size(0), _capacity(0)
-	{
-		string tmp(s);
-		this->Swap(tmp);
-	}*/
-
-	string& operator=(string s)
-	{
-		//this->Swap(s);
-		return *this;
-	}
-	~string() {
-		if (_ptr) {
-			delete[]_ptr;
-			_ptr = nullptr;
-		}
-	}
-	//迭代器
-	iterator begin()
-	{
-		return _ptr;
-	}
-	iterator end() {
-		return _ptr + _size;
-	}
-	void Push_back(char c)
-	{
-		if (_size == _capacity) {
-			//Reserve(_capacity * 2);
-		}
-		_ptr[++_size] = c;
-		_ptr[_size] = '\0';
-	}
-	string& operator+=(char c)
-	{
-		Push_back(c);
-		return*this;
-	}
-	string& operator+=(const char* str) {
-		//append(str);
-		return *this;
-	}
-	istream& operator>>(istream& _cin, string& str)
-	{
-		//cin 不能有空格
-		char ch;
-		while (cin >> ch) {
-			if (ch == '\n')
-				return _cin;
-			str += ch;
-		}
-		return _cin;
-	}
-	ostream& operator<<(ostream& _cout, const string& str)
-	{
-		/*for (size_t i = 0; i < _size; ++i) {
-			_cout << str[i];
-		}*/
-		for (const auto& ch : str) {
-			cout << ch;
-		}
-		return _cout;
-	}
-
-private:
-	char* _ptr;
-	size_t _size;          //有效长度
-	size_t _capacity;       //容量
-};
-
+//class string {
+//public:
+//	string(const char*ptr = "") {
+//		_size = strlen(ptr);
+//		_capacity = _size;
+//		_ptr = new char[_capacity + 1];
+//		strcpy(_ptr, ptr);
+//	}
+//	/*string(const string& s) :_ptr(nullptr), _size(0), _capacity(0)
+//	{
+//		string tmp(s);
+//		this->Swap(tmp);
+//	}*/
+//
+//	string& operator=(string s)
+//	{
+//		//this->Swap(s);
+//		return *this;
+//	}
+//	~string() {
+//		if (_ptr) {
+//			delete[]_ptr;
+//			_ptr = nullptr;
+//		}
+//	}
+//
+//	typedef char* iterator;
+//	//迭代器
+//	iterator begin()
+//	{
+//		return _ptr;
+//	}
+//	iterator end() {
+//		return _ptr + _size;
+//	}
+//	void Push_back(char c)
+//	{
+//		if (_size == _capacity) {
+//			//Reserve(_capacity * 2);
+//		}
+//		_ptr[++_size] = c;
+//		_ptr[_size] = '\0';
+//	}
+//	string& operator+=(char c)
+//	{
+//		Push_back(c);
+//		return*this;
+//	}
+//	string& operator+=(const char* str) {
+//		//append(str);
+//		return *this;
+//	}
+//	//istream& operator>>(istream& _cin, string& str)
+//	//{
+//	//	//cin 不能有空格
+//	//	char ch;
+//	//	while (cin >> ch) {
+//	//		if (ch == '\n')
+//	//			return _cin;
+//	//		str += ch;
+//	//	}
+//	//	return _cin;
+//	//}
+//	//ostream& operator<<(ostream& _cout, const string& str)
+//	//{
+//	//	/*for (size_t i = 0; i < _size; ++i) {
+//	//		_cout << str[i];
+//	//	}*/
+//	//	for (const auto& ch : str) {
+//	//		cout << ch;
+//	//	}
+//	//	return _cout;
+//	//}
+//
+//private:
+//	char* _ptr;
+//	size_t _size;          //有效长度
+//	size_t _capacity;       //容量
+//};
+//
 
 
 
