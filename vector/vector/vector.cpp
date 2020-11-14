@@ -1,5 +1,7 @@
 #include<iostream>
 #include<vector>
+#include<assert.h>
+
 using namespace std;
 
 
@@ -160,7 +162,7 @@ using namespace std;
 //template <class T>
 //void printiterator(const Vector<T>& v)
 //{
-//	Vector<T>::const_iterator cit = v.begin();
+//	typename Vector<T>::const_iterator cit = v.begin();
 //	while (cit != v.end())
 //	{
 //		cout << *cit << " ";
@@ -197,112 +199,112 @@ using namespace std;
 
 
 
-template<class T>
-class Vector {
-public:
-	Vector() :_start(nullptr), _finish(nullptr), _end(nullptr)   //构造
-	{}
-	~Vector()                 //析构
-	{
-		if (_start) {
-			delete[] _start;
-			_start = _finish = _end = nullptr;
-		}
-	}
-	T& operator[](size_t pos)
-	{
-		assert(pos >= _start && pos < _finish);
-		return _start[pos];
-	}
-	const T& operator[](size_t pos) const
-	{
-		assert(pos >= _start && pos < _finish);
-		return _start[pos];
-	}
-	size_t size()   const      //大小
-	{
-		return _finish - _start;
-	}
-	size_t capacity()  const   //容量
-	{
-		return _end - _start;
-	}
-	void push_back(const T& val)   //尾插
-	{
-		if (_finish == _end) {
-			size_t newCapacity = _start == nullpter ? 1 : 2 * capacity();
-			reverse(newCapacity);
-		}
-		*_finish = val;
-		++_finish;
-	}
-	void reverse(size_t n)          //增容
-	{
-		if (n > capacity()) {
-		//需要修改容量
-			size_t sz = size();
-			T* tmp = new T[n];  //先开辟n 个空间
-			for (int i = 0; i < sz; ++i)
-			{
-				tmp[i] = _start[i];
-			}
-			delete[] _start;
-			_start = tmp;
-			_finish = _start + sz;
-			_end = _start + n;
-		}
-	}
-	//修改 size
-	void resize(size_t n, const Vector<T>& v, const T& val = T())
-	{
-		if (n > capacity())
-		{
-			reverse(n);
-		}
-		if (n > size())
-		{
-			for (size_t i = _start + size(); i < _start + n; ++i)
-			{
-				v[i] = val;
-			}
-		}
-		_finish = _start + n;
-	}
-	void insert(const Vector<T>& v,T& pos, const T& val)   //插入
-	{
-		assert(pos >= _start && pos <= _finish);
-		int offset = pos - _start;
-
-		if (_finish == _end) {
-			size_t newCapacity = _start == nullptr ? 1 : 2 * capacity();
-			reverse(newCapacity);
-		}
-		for (int i = _finish; i > pos; --i) {
-			v[i] = v[i - 1];
-		}
-		v[pos] = val;
-		++_finish;
-	}
-private:
-	T* _start;
-	T* _finish;
-	T* _end;
-};
-void test()
-{
-	Vector<int> v;
-	v.size();
-	v.capacity();
-	for (int i = 0; i < v.size(); ++i) {
-		cout << v[i] << endl;
-		//cout << v.operator[](i) << endl;
-	}
-}
-int main()
-{
-	test();
-	return 0;
-}
+//template<class T>
+//class Vector {
+//public:
+//	Vector() :_start(nullptr), _finish(nullptr), _end(nullptr)   //构造
+//	{}
+//	~Vector()                 //析构
+//	{
+//		if (_start) {
+//			delete[] _start;
+//			_start = _finish = _end = nullptr;
+//		}
+//	}
+//	T& operator[](size_t pos)
+//	{
+//		assert(pos >= _start && pos < _finish);
+//		return _start[pos];
+//	}
+//	const T& operator[](size_t pos) const
+//	{
+//		assert(pos >= _start && pos < _finish);
+//		return _start[pos];
+//	}
+//	size_t size()   const      //大小
+//	{
+//		return _finish - _start;
+//	}
+//	size_t capacity()  const   //容量
+//	{
+//		return _end - _start;
+//	}
+//	void push_back(const T& val)   //尾插
+//	{
+//		if (_finish == _end) {
+//			size_t newCapacity = _start == nullpter ? 1 : 2 * capacity();
+//			reverse(newCapacity);
+//		}
+//		*_finish = val;
+//		++_finish;
+//	}
+//	void reverse(size_t n)          //增容
+//	{
+//		if (n > capacity()) {
+//		//需要修改容量
+//			size_t sz = size();
+//			T* tmp = new T[n];  //先开辟n 个空间
+//			for (int i = 0; i < sz; ++i)
+//			{
+//				tmp[i] = _start[i];
+//			}
+//			delete[] _start;
+//			_start = tmp;
+//			_finish = _start + sz;
+//			_end = _start + n;
+//		}
+//	}
+//	//修改 size
+//	void resize(size_t n, const Vector<T>& v, const T& val = T())
+//	{
+//		if (n > capacity())
+//		{
+//			reverse(n);
+//		}
+//		if (n > size())
+//		{
+//			for (size_t i = _start + size(); i < _start + n; ++i)
+//			{
+//				v[i] = val;
+//			}
+//		}
+//		_finish = _start + n;
+//	}
+//	void insert(const Vector<T>& v,T& pos, const T& val)   //插入
+//	{
+//		assert(pos >= _start && pos <= _finish);
+//		int offset = pos - _start;
+//
+//		if (_finish == _end) {
+//			size_t newCapacity = _start == nullptr ? 1 : 2 * capacity();
+//			reverse(newCapacity);
+//		}
+//		for (int i = _finish; i > pos; --i) {
+//			v[i] = v[i - 1];
+//		}
+//		v[pos] = val;
+//		++_finish;
+//	}
+//private:
+//	T* _start;
+//	T* _finish;
+//	T* _end;
+//};
+//void test()
+//{
+//	Vector<int> v;
+//	v.size();
+//	v.capacity();
+//	for (int i = 0; i < v.size(); ++i) {
+//		cout << v[i] << endl;
+//		//cout << v.operator[](i) << endl;
+//	}
+//}
+//int main()
+//{
+//	test();
+//	return 0;
+//}
 
 
 
