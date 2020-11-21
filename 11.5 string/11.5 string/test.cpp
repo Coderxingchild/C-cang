@@ -2,62 +2,84 @@
 #include<string>
 
 using namespace std;
+#pragma warning(disable:4996)
+
+int main()
+{
+	float r, h, C1, S1, S2, V1, V2;
+	float pi = 3.1415926;
+	/*cin >> r;
+	cin >> h;*/
+	scanf("%f,%f\n", &r, &h);
+	C1 = 2 * pi*r;
+	S1 = pi * r*r;
+	S2 = 4 * pi*r*r;
+	V1 = 4 / 3 * pi*r*r*r;
+	V2 = S1 * h;
+	/*cout << "圆的面积：" << S1 << endl;
+	cout << "圆的周长：" << C1 << endl;
+	cout << "球表面积:" << S2 << endl;
+	cout << "球体积：" << V1 << endl;
+	cout << "圆柱体体积：" << V2 << endl;*/
+	printf("圆的面积：S1=%6.2f\n", S1);
+	return 0;
+}
 
 
 //模拟string
-
-class String {
-public:
-	//构造函数
-	String(const char* ptr = "") {
-		_size = strlen(ptr);
-		_capacity = _size;
-		_ptr = new char[_size + 1];
-		strcpy(_ptr, ptr);
-	}
-	//拷贝构造函数
-	/*String(const String& str) :_ptr(new char[_capacity + 1]), _size(str._ptr), _capacity(str._capacity)
-	{
-		strcpy(_ptr, str._ptr);
-	}*/
-
-	String(const String& str) :_ptr(nullptr), _size(0), _capacity(0)
-	{
-		String tmp(str._ptr);
-		Swap(tmp);
-	}
-	void Swap(String& str) {
-		swap(this->_ptr, str._ptr);
-		swap(this->_size, str._size);
-		swap(this->_capacity, str._size);
-	}
-	//析构函数
-	~String()
-	{
-		if (_ptr) {
-			delete[] _ptr;
-			_ptr = nullptr;
-			_size = _capacity = 0;
-		}
-	}
-	//赋值
-	/*String& operator=(String str)
-	{
-		Swap(str);
-		return *this;
-	}*/
-	String& operator=(String str)
-	{
-		if (this != &str) {
-			char* ymp = new char[str._capacity + 1];
-
-		}
-	}
-private:
-	char* _ptr;
-	size_t _size;
-	size_t _capacity;
-};
+//
+//class String {
+//public:
+//	//构造函数
+//	String(const char* ptr = "") {
+//		_size = strlen(ptr);
+//		_capacity = _size;
+//		_ptr = new char[_size + 1];
+//		strcpy(_ptr, ptr);
+//	}
+//	//拷贝构造函数
+//	/*String(const String& str) :_ptr(new char[_capacity + 1]), _size(str._ptr), _capacity(str._capacity)
+//	{
+//		strcpy(_ptr, str._ptr);
+//	}*/
+//
+//	String(const String& str) :_ptr(nullptr), _size(0), _capacity(0)
+//	{
+//		String tmp(str._ptr);
+//		Swap(tmp);
+//	}
+//	void Swap(String& str) {
+//		swap(this->_ptr, str._ptr);
+//		swap(this->_size, str._size);
+//		swap(this->_capacity, str._size);
+//	}
+//	//析构函数
+//	~String()
+//	{
+//		if (_ptr) {
+//			delete[] _ptr;
+//			_ptr = nullptr;
+//			_size = _capacity = 0;
+//		}
+//	}
+//	//赋值
+//	/*String& operator=(String str)
+//	{
+//		Swap(str);
+//		return *this;
+//	}*/
+//	String& operator=(String str)
+//	{
+//		if (this != &str) {
+//			char* ymp = new char[str._capacity + 1];
+//
+//		}
+//	}
+//private:
+//	char* _ptr;
+//	size_t _size;
+//	size_t _capacity;
+//};
 
 
 
