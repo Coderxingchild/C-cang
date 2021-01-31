@@ -1,64 +1,64 @@
-//c++头文件都没有 .h 后缀
-#include<iostream>
-#include<stdlib.h>
-#include<stdio.h>
-#include<time.h>
-using namespace std;
+////c++头文件都没有 .h 后缀
+//#include<iostream>
+//#include<stdlib.h>
+//#include<stdio.h>
+//#include<time.h>
+//using namespace std;
+////
+//////C++入门--------命名空间、缺省参数、函数重载、引用(别名)
+////
+////
+////namespace + 命名空间名称 [变量，函数]
 //
-////C++入门--------命名空间、缺省参数、函数重载、引用(别名)
+//namespace N1 {  
+//	int a = 0;
+//	void fun1() {
+//		printf("N1:fun1()\n");
+//	};
+//	namespace N2 {    //嵌套定义
+//		int a = 1;
+//		void fun1() {
+//			printf("N1:N2:fun1()\n");
+//		}
+//	}
+//}
+//namespace N1 {      //分段定义
+//	int b;
+//	void fun2() {
+//		printf("N1:fun2()\n");
+//	}
+//}
+//int a = 10;
+//void fun1()
+//{
+//	printf("fun1()\n");
+//}
+//void test()
+//{
+//	//打印全局 a 值 ---- 10
+//	printf("a: %d\n", a);
+//	//命名空间当中成员访问
+//	//1.命名空间 + :: +成员
+//	//2.using 命名空间::成员
+//	//3.展开命名空间 using namespace 命名空间
 //
-//
-//namespace + 命名空间名称 [变量，函数]
-
-namespace N1 {  
-	int a = 0;
-	void fun1() {
-		printf("N1:fun1()\n");
-	};
-	namespace N2 {    //嵌套定义
-		int a = 1;
-		void fun1() {
-			printf("N1:N2:fun1()\n");
-		}
-	}
-}
-namespace N1 {      //分段定义
-	int b;
-	void fun2() {
-		printf("N1:fun2()\n");
-	}
-}
-int a = 10;
-void fun1()
-{
-	printf("fun1()\n");
-}
-void test()
-{
-	//打印全局 a 值 ---- 10
-	printf("a: %d\n", a);
-	//命名空间当中成员访问
-	//1.命名空间 + :: +成员
-	//2.using 命名空间::成员
-	//3.展开命名空间 using namespace 命名空间
-
-	printf("N1:a = %d\n", N1::a);
-	printf("N1:N2:a = %d\n", N1::N2::a);
-	using N1::fun2;
-	printf("N1:fun2 \n", fun2);
-	//using N1::a;
-	//printf("N1:a = %d\n", a);   //与下两行中a发生冲突定义
-	using N1::N2::a;
-	printf("N1:N2:a = %d\n", a);
-}
-void test1()
-{
-	int a;
-	//c++中输入输出流，定义的所有成员都属于 std 命名空间
-	//支持连续输出输入
-	std::cin >> a;
-	std::cout << a;      //using namespace std;
-}
+//	printf("N1:a = %d\n", N1::a);
+//	printf("N1:N2:a = %d\n", N1::N2::a);
+//	using N1::fun2;
+//	printf("N1:fun2 \n", fun2);
+//	//using N1::a;
+//	//printf("N1:a = %d\n", a);   //与下两行中a发生冲突定义
+//	using N1::N2::a;
+//	printf("N1:N2:a = %d\n", a);
+//}
+//void test1()
+//{
+//	int a;
+//	//c++中输入输出流，定义的所有成员都属于 std 命名空间
+//	//支持连续输出输入
+//	std::cin >> a;
+//	std::cout << a;      //using namespace std;
+//}
 //
 //
 //
@@ -80,7 +80,7 @@ void test1()
 //}
 //void test2()
 //{
-//	fun2();
+//	//fun2();
 //	fun2(100); //缺省参数调用时可以传参也可以不传参
 //	fun3(50);
 //
@@ -122,32 +122,32 @@ void test1()
 //}
 //
 //
-//int main()
-//{
-//	//test1();
-//	//test2();
-//	int a = Add(10, 20);
-//	return 0;
-//}
-
+////int main()
+////{
+////	//test1();
+////	//test2();
+////	int a = Add(10, 20);
+////	return 0;
+////}
+////
+////
+//////按照C语言进行编译
+////extern "C" int Add(int a, int b);   //c 语言中底层函数 _Add ：只显示函数名信息
+////char Add(char a, char b);          //c++ 语言中底层函数  不仅显示函数名信息还显示参数信息----------重载
+////
+////int main()
+////{
+////	int a = Add(10, 20);
+////	char b = Add('a', 'b');
+////	return 0;
+////}
 //
-////按照C语言进行编译
-//extern "C" int Add(int a, int b);   //c 语言中底层函数 _Add ：只显示函数名信息
-//char Add(char a, char b);          //c++ 语言中底层函数  不仅显示函数名信息还显示参数信息----------重载
 //
-//int main()
-//{
-//	int a = Add(10, 20);
-//	char b = Add('a', 'b');
-//	return 0;
-//}
-
-
-
-////引用必须初始化：表明当前变量指向哪一个实体
-////一个变量可以有多个引用
-////引用若做返回值，返回值的生命周期需要大于函数的生命周期（即不可以返回临时变量的值----调用完毕之后临时变量空间会被释放）
 //
+//////引用必须初始化：表明当前变量指向哪一个实体
+//////一个变量可以有多个引用
+//////引用若做返回值，返回值的生命周期需要大于函数的生命周期（即不可以返回临时变量的值----调用完毕之后临时变量空间会被释放）
+////
 //void test()
 //{
 //	int a = 10;
@@ -187,10 +187,10 @@ void test1()
 //	const int& ra3 = d;  //存在一个整型的临时变量
 //
 //}
-
-
-
-////交换函数
+//
+//
+//
+//////交换函数
 //
 //void Swap(int* a,int* b)
 //{
@@ -207,61 +207,63 @@ void test1()
 ////	int c = a + b;
 ////	return c;          // c 是一个临时变量，使用结束会自动销毁
 ////}
+////int main()
+////{
+////	int a = 10; int b = 20;
+////	int &ra = Swap(a, b);
+////	Swap(&a, &b);
+////	return 0;
+////}
+//
+//
+//
+//
+////对比传值传引用的效率
+//
+//struct A {
+//	int a[1000];
+//};
+//
+//A globalA;
+//
+////A fun1()
+////{
+////	return globalA;
+////}
+//A& fun2()
+//{
+//	return globalA;
+//}
+//void test()
+//{
+//	int n;
+//	cout << "设置循环次数：" << endl;
+//	cin >> n;
+//
+//	size_t begin = clock();
+//	for (int i = 0; i < n; ++i) {
+//		fun1();
+//	}
+//	size_t end = clock();
+//	cout << "传值 time: " << end - begin << endl;
+//
+//	begin = clock();
+//	for (int i = 0; i < n; ++i) {
+//		//fun2();
+//	}
+//	end = clock();
+//	cout << "传引用 time: " << end - begin << endl;
+//}
+//
+//
+//
+//
+//
+//
 //int main()
 //{
-//	int a = 10; int b = 20;
-//	int &ra = Swap(a, b);
-//	Swap(&a, &b);
+//	//test();
 //	return 0;
 //}
-
-
-
-
-//对比传值传引用的效率
-
-struct A {
-	int a[1000];
-};
-
-A globalA;
-
-A fun1()
-{
-	return globalA;
-}
-A& fun2()
-{
-	return globalA;
-}
-void test()
-{
-	int n;
-	cout << "设置循环次数：" << endl;
-	cin >> n;
-
-	size_t begin = clock();
-	for (int i = 0; i < n; ++i) {
-		fun1();
-	}
-	size_t end = clock();
-	cout << "传值 time: " << end - begin << endl;
-
-	begin = clock();
-	for (int i = 0; i < n; ++i) {
-		fun2();
-	}
-	end = clock();
-	cout << "传引用 time: " << end - begin << endl;
-}
-
-
-
-
-int main()
-{
-	//test();
-	return 0;
-}
-
-
+//
+//
