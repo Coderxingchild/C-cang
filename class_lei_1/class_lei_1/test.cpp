@@ -6,7 +6,10 @@ using namespace std;
 
 #pragma warning (disable:4996)
 
+
+
 //定义一个类
+
 
 //struct Student {
 //	//成员函数
