@@ -1,0 +1,7 @@
+﻿  Date.cpp
+  test.cpp
+d:\users\github 代码\c-cang\class_lei_1\class_lei_1\test.cpp(378): warning C4269: “b”: 用编译器生成的默认构造函数初始化的“const”自动数据产生不可靠的结果
+  test_lei.cpp
+  正在生成代码...
+d:\users\github 代码\c-cang\class_lei_1\class_lei_1\test.cpp(302): error C4716: “operator==”: 必须返回一个值
+d:\users\github 代码\c-cang\class_lei_1\class_lei_1\test.cpp(345): error C4716: “A::setI”: 必须返回一个值

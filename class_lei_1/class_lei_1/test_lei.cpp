@@ -11,61 +11,63 @@ using namespace std;
 //普通函数可以调用 static 成员函数
 
 
-class Date {
-public:
-	//友元函数的声明可以放在类内任何地方
-	friend void operator<<(ostream& _cout, const Date& d);
 
-	Date(int y = 1, int m = 1, int d = 1)
-		:_y(y),_m(m),_d(d)
-	{}
-private:
-	int _y;
-	int _m;
-	int _d;
-};
-
-void operator<<(ostream& _cout, const Date& d)
-{
-	_cout << d._y << "-" << d._m << "-" << d._d << endl;
-}
-void test()
-{
-	Date d(2021, 3, 3);
-
-	//d << cout;    // 若 重载 operator<< 在类内定义
-
-	cout << d;      //定义友元之后输出方式
-}
-
-
-
+//class Date {
+//public:
+//	//友元函数的声明可以放在类内任何地方
+//	friend void operator<<(ostream& _cout, const Date& d);
+//
+//	Date(int y = 1, int m = 1, int d = 1)
+//		:_y(y), _m(m), _d(d)
+//	{}
+//private:
+//	int _y;
+//	int _m;
+//	int _d;
+//};
+//
+//void operator<<(ostream& _cout, const Date& d)
+//{
+//	_cout << d._y << "-" << d._m << "-" << d._d << endl;
+//}
+//void test()
+//{
+//	Date d(2021, 3, 3);
+//
+//	//d << cout;    // 若 重载 operator<< 在类内定义
+//
+//	cout << d;      //定义友元之后输出方式
+//}
 
 
-class A {
-public:
-	//explicit A(int a):_a(a)  // 防止产生匿名对象-------只针对单参构造
-	A(int a) :_a(a)
-	{
-		cout << "A()" << endl;
-	}
-	A(const A& a)     //拷贝构造
-	{
-		_a = a._a;
-	}
-private:
-	int _a;
-	static int _b;   //static 成员变量必须在类外初始化
-};
 
-int A::_b = 10;
 
-void test()
-{
-	A aa(1); //默认构造
-	A aobj = aa;     //拷贝构造
-	A aobj2 = 20;    //会产生一个匿名对象
-}
+
+//class A {
+//public:
+//	//explicit A(int a):_a(a)  // 防止产生匿名对象-------只针对单参构造
+//	A(int a) :_a(a)
+//	{
+//		cout << "A()" << endl;
+//	}
+//	A(const A& a)     //拷贝构造
+//	{
+//		_a = a._a;
+//	}
+//private:
+//	int _a;
+//	static int _b;   //static 成员变量必须在类外初始化
+//};
+//
+//
+//int A::_b = 10;
+//
+//void test()
+//{
+//	A aa(1); //默认构造
+//	A aobj = aa;     //拷贝构造
+//	A aobj2 = 20;    //会产生一个匿名对象
+//}
 
 
 
